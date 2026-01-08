@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Projects DR</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="styledark.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', sans-serif;
+        }
+
+        body {
+            background: #0f172a;
+            color: #ffffff;
+            margin: 108px;
+            padding: 0;
+        }
+
+        .section-title {
+            text-align: center;
+            font-size: 32px;
+            margin: 40px 0;
+            color: #38bdf8;
+        }
+
+        .projects-container {
+            display: flex;
+            gap: 20px;
+            justify-content: center;
+            flex-wrap: wrap;
+            padding: 0 20px;
+        }
+
+        .project-card {
+            background: #1e293b;
+            width: 280px;
+            padding: 20px;
+            border-radius: 12px;
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
+            transition: transform 0.3s;
+        }
+
+        .project-card:hover {
+            transform: translateY(-10px);
+        }
+
+        .project-card h3 {
+            color: #22d3ee;
+            margin-bottom: 10px;
+        }
+
+        .project-card p {
+            font-size: 14px;
+            line-height: 1.5;
+        }
+
+        .project-card span {
+            display: block;
+            margin: 10px 0;
+            font-size: 13px;
+            color: #a5f3fc;
+        }
+
+        .btn {
+            display: inline-block;
+            text-decoration: none;
+            background: #38bdf8;
+            color: #0f172a;
+            padding: 8px 14px;
+            border-radius: 6px;
+            font-size: 14px;
+            font-weight: bold;
+        }
+
+        /* navbar */
+        .navbar {
+            width: 100%;
+            padding: 20px 60px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            position: fixed;
+            top: 0;
+            left: 0;
+            backdrop-filter: blur(10px);
+            z-index: 1000;
+        }
+
+        .logo {
+            font-size: 22px;
+            font-weight: 800;
+            letter-spacing: 1px;
+        }
+
+        .nav-links {
+            list-style: none;
+            display: flex;
+        }
+
+        .nav-links li {
+            margin-left: 30px;
+        }
+
+        .nav-links a {
+            text-decoration: none;
+            color: #111;
+            font-weight: 600;
+            position: relative;
+        }
+
+        /* underline animation */
+        .nav-links a::after {
+            content: '';
+            width: 0;
+            height: 2px;
+            background: #0e0c0c;
+            position: absolute;
+            left: 0;
+            bottom: -6px;
+            transition: 0.3s;
+        }
+
+        .nav-links a:hover::after,
+        .nav-links a.active::after {
+            width: 100%;
+        }
+
+        /* FOOTER */
+        footer {
+            text-align: center;
+            padding: 2px;
+            background: #111;
+            color: #fff;
+            font-size: 13px;
+        }
+    </style>
+</head>
+
+<body>
+    <nav class="navbar">
+        <div class="logo">DR</div>
+        <ul class="nav-links">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="about.html">About</a></li>
+            <li><a href="skills.html">Skills</a></li>
+            <li><a href="education.html">Education</a></li>
+            <li><a href="projects.html" class="active">Projects</a></li>
+            <li><a href="contact.html">Contact</a></li>
+        </ul>
+        <!-- Dark/Light Toggle Button -->
+        <div class="toggle-container">
+            <button id="theme-toggle">🌙</button>
+        </div>
+    </nav>
+
+    <section id="projects">
+        <h2 class="section-title">My Projects</h2>
+
+        <div class="projects-container">
+
+            <!-- Project 1 -->
+            <div class="project-card">
+                <h3>Personal Portfolio Website</h3>
+                <p>
+                    A responsive personal portfolio website to showcase my skills,
+                    education, and projects.
+                </p>
+                <span>HTML • CSS</span>
+                <a href="#" class="btn">View Project</a>
+            </div>
+
+            <!-- Project 2 -->
+            <div class="project-card">
+                <h3>Soon</h3>
+                <p>
+                    --------
+                </p>
+                <span>--------</span>
+                <a href="#" class="btn">View Project</a>
+            </div>
+
+            <!-- Project 3 -->
+            <div class="project-card">
+                <h3>Soon</h3>
+                <p>
+                    ---------
+                </p>
+                <span>-----</span>
+                <a href="#" class="btn">View Project</a>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer>
+        <p>© 2026 DuraiRaja | Web Developer</p>
+    </footer>
+    <script>
+        const body = document.body;
+        const toggleButton = document.getElementById('theme-toggle');
+
+        // Load theme from localStorage
+        if (localStorage.getItem('theme') === 'dark') {
+            body.classList.add('dark-mode');
+            toggleButton.textContent = '☀️';
+        }
+
+        toggleButton.addEventListener('click', () => {
+            body.classList.toggle('dark-mode');
+
+            if (body.classList.contains('dark-mode')) {
+                toggleButton.textContent = '☀️';
+                localStorage.setItem('theme', 'dark');
+            } else {
+                toggleButton.textContent = '🌙';
+                localStorage.setItem('theme', 'light');
+            }
+        });
+    </script>
+
+</body>
+
+</html>
