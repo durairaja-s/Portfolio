@@ -1,0 +1,260 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="styledark.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', sans-serif;
+        }
+
+        .contact {
+            padding: 119px 76px;
+            background: linear-gradient(135deg, #1d2671, #c33764);
+            color: white;
+            text-align: center;
+        }
+
+        .contact h2 {
+            font-size: 32px;
+            margin-bottom: 10px;
+        }
+
+        .contact p {
+            font-size: 16px;
+            margin-bottom: 30px;
+        }
+
+        .contact-container {
+            display: flex;
+            justify-content: center;
+            gap: 40px;
+            flex-wrap: wrap;
+        }
+
+        .contact-info {
+            max-width: 300px;
+            text-align: left;
+        }
+
+        .contact-info p {
+            margin: 10px 0;
+            font-size: 16px;
+        }
+
+        .contact-form {
+            max-width: 350px;
+            width: 100%;
+        }
+
+        .contact-form input,
+        .contact-form textarea {
+            width: 100%;
+            padding: 12px;
+            margin-bottom: 12px;
+            border: none;
+            border-radius: 5px;
+            outline: none;
+        }
+
+        .contact-form button {
+            width: 100%;
+            padding: 12px;
+            background: #ffcc70;
+            border: none;
+            border-radius: 5px;
+            font-size: 16px;
+            cursor: pointer;
+            font-weight: bold;
+        }
+
+        .contact-form button:hover {
+            background: #ffd98e;
+        }
+
+        /* navbar */
+        .navbar {
+            width: 100%;
+            padding: 20px 60px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            position: fixed;
+            top: 0;
+            left: 0;
+            backdrop-filter: blur(10px);
+            z-index: 1000;
+        }
+
+        .logo {
+            font-size: 22px;
+            font-weight: 800;
+            letter-spacing: 1px;
+        }
+
+        .nav-links {
+            list-style: none;
+            display: flex;
+        }
+
+        .nav-links li {
+            margin-left: 30px;
+        }
+
+        .nav-links a {
+            text-decoration: none;
+            color: #111;
+            font-weight: 600;
+            position: relative;
+        }
+
+        /* underline animation */
+        .nav-links a::after {
+            content: '';
+            width: 0;
+            height: 2px;
+            background: #0e0c0c;
+            position: absolute;
+            left: 0;
+            bottom: -6px;
+            transition: 0.3s;
+        }
+
+        .nav-links a:hover::after,
+        .nav-links a.active::after {
+            width: 100%;
+        }
+
+        .social-icons {
+            margin-top: 20px;
+        }
+
+        .social-icons a {
+            font-size: 28px;
+            margin: 0 10px;
+            text-decoration: none;
+            transition: 0.3s;
+            display: inline-block;
+        }
+
+        .social-icons a:hover {
+            transform: translateY(-5px) scale(1.2);
+        }
+
+        .whatsapp-btn {
+            display: inline;
+            margin-top: 20px;
+            padding: 12px 20px;
+            background: #25D366;
+            color: white;
+            font-weight: bold;
+            border-radius: 30px;
+            text-decoration: none;
+            transition: 0.3s;
+        }
+
+        .whatsapp-btn:hover {
+            background: #1ebe5d;
+            transform: scale(1.05);
+        }
+
+        /* FOOTER */
+        footer {
+            text-align: center;
+            padding: 2px;
+            background: #111;
+            color: #fff;
+            font-size: 13px;
+        }
+    </style>
+</head>
+
+<body>
+    <nav class="navbar">
+        <div class="logo">DR</div>
+        <ul class="nav-links">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="about.html">About</a></li>
+            <li><a href="skills.html">Skills</a></li>
+            <li><a href="education.html">Education</a></li>
+            <li><a href="projects.html">Projects</a></li>
+            <li><a href="contact.html" class="active">Contact</a></li>
+        </ul>
+        <!-- Dark/Light Toggle Button -->
+        <div class="toggle-container">
+            <button id="theme-toggle">🌙</button>
+        </div>
+    </nav>
+
+    <section id="contact" class="contact">
+        <h2>Contact Me</h2>
+        <p>If you want to work together or have any questions, feel free to contact me.</p>
+
+        <div class="contact-container">
+
+            <!-- Contact Info -->
+            <div class="contact-info">
+                <p><strong>Email:</strong> durairajass45@email.com</p>
+                <p><strong>Phone:</strong> +91 9788467994</p>
+                <p><strong>Location:</strong> Tenkasi,Tamil Nadu, India</p>
+            </div>
+
+            <!-- Contact Form -->
+            <form action="https://formsubmit.co/durairajass45@gmail.com" method="POST" class="contact-form">
+
+                <input type="text" name="name" placeholder="Your Name" required>
+                <input type="email" name="email" placeholder="Your Email" required>
+                <textarea name="message" placeholder="Your Message" rows="4" required></textarea>
+
+                <!-- Extra options -->
+                <input type="hidden" name="_subject" value="New Portfolio Contact Message">
+                <input type="hidden" name="_captcha" value="false">
+
+                <button type="submit">Send Message</button>
+            </form>
+            <div class="social-icons">
+                <a href="https://github.com/durairaja-s" target="_blank">|🐱|</a>
+                <a href="www.linkedin.com/in/durairaja-s-25130530a" target="_blank">|💼|</a>
+            </div>
+            <a href="https://wa.me/9788467994" class="whatsapp-btn" target="_blank">
+                💬 Chat on WhatsApp
+            </a>
+
+
+        </div>
+    </section>
+    <!-- FOOTER -->
+    <footer>
+        <p>© 2026 DuraiRaja | Web Developer</p>
+    </footer>
+    <script>
+        const body = document.body;
+        const toggleButton = document.getElementById('theme-toggle');
+
+        // Load theme from localStorage
+        if (localStorage.getItem('theme') === 'dark') {
+            body.classList.add('dark-mode');
+            toggleButton.textContent = '☀️';
+        }
+
+        toggleButton.addEventListener('click', () => {
+            body.classList.toggle('dark-mode');
+
+            if (body.classList.contains('dark-mode')) {
+                toggleButton.textContent = '☀️';
+                localStorage.setItem('theme', 'dark');
+            } else {
+                toggleButton.textContent = '🌙';
+                localStorage.setItem('theme', 'light');
+            }
+        });
+    </script>
+</body>
+
+</html>
