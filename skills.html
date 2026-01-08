@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Skills DR</title>
+  <link rel="stylesheet" href="styledark.css">
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: 'Segoe UI', sans-serif;
+    }
+
+    body {
+      background: linear-gradient(to right, #00c6ff, #d9dee4);
+      margin: 0;
+      padding: 2px;
+    }
+
+    .skills-section {
+      max-width: 800px;
+      margin: 100px auto;
+      padding: 30px;
+      background: rgba(0, 0, 0, 0.5);
+      border-radius: 10px;
+    }
+
+    .skills-section h2 {
+      text-align: center;
+      font-size: 2.2em;
+      margin-bottom: 30px;
+      text-shadow: 2px 2px 5px #ca5858;
+    }
+
+    .skill {
+      margin-bottom: 20px;
+    }
+
+    .skill-name {
+      font-weight: bold;
+      margin-bottom: 5px;
+    }
+
+    .skill-bar {
+      background: #ddd;
+      border-radius: 20px;
+      overflow: hidden;
+      height: 25px;
+    }
+
+    .skill-level {
+      height: 100%;
+      background: #00ff94;
+      width: 0;
+      border-radius: 20px;
+      text-align: right;
+      padding-right: 10px;
+      box-sizing: border-box;
+      font-weight: bold;
+      color: #000;
+      line-height: 25px;
+      transition: width 1.5s ease-in-out;
+    }
+
+    /* navbar */
+    .navbar {
+      width: 100%;
+      padding: 20px 60px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      position: fixed;
+      top: 0;
+      left: 0;
+      backdrop-filter: blur(10px);
+      z-index: 1000;
+    }
+
+    .logo {
+      font-size: 22px;
+      font-weight: 800;
+      letter-spacing: 1px;
+    }
+
+    .nav-links {
+      list-style: none;
+      display: flex;
+    }
+
+    .nav-links li {
+      margin-left: 30px;
+    }
+
+    .nav-links a {
+      text-decoration: none;
+      color: #111;
+      font-weight: 600;
+      position: relative;
+    }
+
+    /* underline animation */
+    .nav-links a::after {
+      content: '';
+      width: 0;
+      height: 2px;
+      background: #111;
+      position: absolute;
+      left: 0;
+      bottom: -6px;
+      transition: 0.3s;
+    }
+
+    .nav-links a:hover::after,
+    .nav-links a.active::after {
+      width: 100%;
+    }
+
+    /* FOOTER */
+    footer {
+      text-align: center;
+      padding: 2px;
+      background: #111;
+      color: #fff;
+      font-size: 13px;
+    }
+  </style>
+</head>
+
+<body>
+  <nav class="navbar">
+    <div class="logo">DR</div>
+    <ul class="nav-links">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="about.html">About</a></li>
+      <li><a href="skills.html" class="active">Skills</a></li>
+      <li><a href="education.html">Education</a></li>
+      <li><a href="projects.html">Projects</a></li>
+      <li><a href="contact.html">Contact</a></li>
+    </ul>
+    <!-- Dark/Light Toggle Button -->
+    <div class="toggle-container">
+      <button id="theme-toggle">🌙</button>
+    </div>
+  </nav>
+
+  <div class="skills-section">
+    <h2>My Skills 💻</h2>
+
+    <div class="skill">
+      <div class="skill-name">HTML</div>
+      <div class="skill-bar">
+        <div class="skill-level" style="width: 95%;">95%</div>
+      </div>
+    </div>
+
+    <div class="skill">
+      <div class="skill-name">CSS</div>
+      <div class="skill-bar">
+        <div class="skill-level" style="width: 90%;">90%</div>
+      </div>
+    </div>
+
+    <div class="skill">
+      <div class="skill-name">JavaScript</div>
+      <div class="skill-bar">
+        <div class="skill-level" style="width: 75%;">75%</div>
+      </div>
+    </div>
+
+    <div class="skill">
+      <div class="skill-name">C Programming</div>
+      <div class="skill-bar">
+        <div class="skill-level" style="width: 85%;">85%</div>
+      </div>
+    </div>
+
+
+    <div class="skill">
+      <div class="skill-name">Python(Basic)</div>
+      <div class="skill-bar">
+        <div class="skill-level" style="width: 40%;">40%</div>
+      </div>
+    </div>
+
+  </div>
+  <!-- FOOTER -->
+  <footer>
+    <p>© 2026 DuraiRaja | Web Developer</p>
+  </footer>
+
+  <script>
+    // Animate skill bars
+    window.onload = () => {
+      const bars = document.querySelectorAll('.skill-level');
+      bars.forEach(bar => {
+        const width = bar.style.width;
+        bar.style.width = '0';
+        setTimeout(() => {
+          bar.style.width = width;
+        }, 200);
+      });
+    };
+
+    const toggleButton = document.getElementById('theme-toggle');
+    const body = document.body;
+
+    // Load theme from localStorage if available
+    if (localStorage.getItem('theme') === 'dark') {
+      body.classList.add('dark-mode');
+      toggleButton.textContent = '☀️';
+    }
+
+    toggleButton.addEventListener('click', () => {
+      body.classList.toggle('dark-mode');
+      if (body.classList.contains('dark-mode')) {
+        toggleButton.textContent = '☀️';
+        localStorage.setItem('theme', 'dark');
+      } else {
+        toggleButton.textContent = '🌙';
+        localStorage.setItem('theme', 'light');
+      }
+    });
+  </script>
+
+</body>
+
+</html>
