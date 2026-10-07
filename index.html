@@ -1,0 +1,442 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Durairaja S — Web developer and CSBS student building responsive, modern, cinematic interfaces.">
+    <title>Durairaja S | Portfolio</title>
+     <link rel="icon" type="image/png" href="DR.png">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=JetBrains+Mono:wght@400;500;600;700&family=Manrope:wght@400;500;600;700&family=Space+Grotesk:wght@400;500;600;700&family=Syne:wght@500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="Portfolio.css">
+</head>
+
+<body>
+    <!-- Top Scroll Progress Indicator -->
+    <div class="scroll-progress-line" id="scroll-progress" aria-hidden="true"></div>
+
+    <!-- Custom Interactive Cyber Cursor -->
+    <div class="cursor-dot" id="cursor-dot" aria-hidden="true"></div>
+    <div class="cursor-ring" id="cursor-ring" aria-hidden="true"></div>
+
+    <!-- Animated Wallpaper Background -->
+    <div class="wallpaper" aria-hidden="true">
+        <canvas id="wall-canvas"></canvas>
+        <div class="grid-plane"></div>
+        <div class="aurora a1"></div>
+        <div class="aurora a2"></div>
+        <div class="aurora a3"></div>
+        <div class="aurora a4"></div>
+        <div class="aurora a5"></div>
+    </div>
+    <div class="noise" aria-hidden="true"></div>
+
+    <a class="skip" href="#home">Skip to content</a>
+
+    <!-- Navigation Bar -->
+    <header class="nav">
+        <a class="logo" href="#home"><span>DS</span></a>
+        
+        <nav class="nav-links">
+            <a href="#about">About</a>
+            <a href="#experience">Experience</a>
+            <a href="#skills">Skills</a>
+            <a href="#projects">Work</a>
+            <a href="#certificate">Certificates</a>
+            <a href="#contact" class="nav-cta">Let’s talk</a>
+        </nav>
+
+        <div class="nav-controls">
+            <!-- Dynamic Theme Palette Switcher -->
+            <button type="button" class="theme-btn" id="theme-btn" aria-label="Switch color theme" title="Switch color theme">
+                <span class="theme-swatch" id="theme-swatch"></span>
+                <span id="theme-label">Dark</span>
+            </button>
+
+            <!-- Mobile Hamburger Menu Button -->
+            <button class="menu-btn" type="button" aria-label="Open menu" aria-expanded="false">
+                <span></span><span></span>
+            </button>
+        </div>
+    </header>
+
+    <main>
+        <!-- Hero Section -->
+        <section class="hero" id="home">
+            <div class="hero-grid">
+                <div class="hero-copy">
+                    <div class="kicker-wrapper">
+                        <span class="kicker-pulse"></span>
+                        <p class="kicker">Available for internships</p>
+                    </div>
+
+                    <h1>
+                        <span class="name-gradient">Durairaja S</span>
+                        <span class="hero-sub">builds interfaces that <span class="typing-text" id="typing-text">feel alive.</span><span class="typing-cursor"></span></span>
+                    </h1>
+
+                    <p class="lede">
+                        Web developer and B.Tech CSBS student. I design responsive, cinematic
+                        front-ends with HTML, CSS, JavaScript, Bootstrap, Python, and Java —
+                        then ship them with care and motion.
+                    </p>
+
+                    <div class="hero-actions">
+                        <a class="btn btn-primary" href="Durairaja_S_ATS_Resume (2).pdf" target="_blank" rel="noopener">
+                            <span>View resume
+                                
+                            </span>
+                            <svg class="btn-icon" width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.3" stroke-linecap="round" stroke-linejoin="round"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/><circle cx="12" cy="12" r="3"/></svg>
+                        </a>
+                        <a class="btn btn-ghost" href="#projects">
+                            <span>See work</span>
+                            <svg class="btn-icon" width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.3" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+                        </a>
+                    </div>
+
+                    <div class="hero-meta">
+                        <div>
+                            <strong>KIT Coimbatore</strong>
+                            <span>CSBS · 3rd year</span>
+                        </div>
+                        <div>
+                            <strong>2 internships</strong>
+                            <span>Cognifyz · Litz Tech</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 3D Holographic Cyber Profile Stage -->
+                <div class="hero-stage" data-tilt-stage>
+                    <div class="stage-backglow"></div>
+                    <div class="orbit orbit-a"><span class="orbit-node"></span></div>
+                    <div class="orbit orbit-b"><span class="orbit-node"></span></div>
+                    <div class="orbit orbit-c"><span class="orbit-node"></span></div>
+
+                    <div class="photo-badge" data-photo-tilt id="photo-badge-card">
+                        <span class="badge-strap"></span>
+                        <span class="plate plate-a"></span>
+                        <span class="plate plate-b"></span>
+
+                        <div class="badge-face">
+                            <!-- Cyber HUD Corner Brackets -->
+                            <span class="hud-bracket hud-tl"></span>
+                            <span class="hud-bracket hud-tr"></span>
+                            <span class="hud-bracket hud-bl"></span>
+                            <span class="hud-bracket hud-br"></span>
+
+                            <!-- Holographic Laser Scanline -->
+                            <div class="scan-laser" aria-hidden="true"></div>
+
+                            <!-- Top HUD Bar -->
+                            <div class="badge-top-bar">
+                                <span class="live-dot"><span class="dot-radar"></span>AVAILABLE</span>
+                                <span class="badge-sys-id">ID // DS.2026</span>
+                            </div>
+
+                            <!-- Profile Photo with Dynamic Specular Glare -->
+                            <div class="badge-photo" id="badge-photo-wrap">
+                                <img id="hero-portrait-img" src="photo-hero.jpg" alt="Portrait of Durairaja S">
+                                <span class="photo-sheen"></span>
+                                <span class="photo-glare"></span>
+                                <div class="photo-scan-grid"></div>
+                            </div>
+
+                            <!-- Badge Meta & Flip Button -->
+                            <div class="badge-meta">
+                                <div class="badge-id-info">
+                                    <strong>Durairaja S <span class="verified-badge" title="Verified Creator">✓</span></strong>
+                                    <em>Web Developer · CSBS</em>
+                                </div>
+                                <button type="button" class="photo-switch-btn" id="photo-switch-btn" title="Toggle Portrait Photo">
+                                    <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M21 2v6h-6"/><path d="M3 12a9 9 0 0 1 15-6.7L21 8"/><path d="M3 22v-6h6"/><path d="M21 12a9 9 0 0 1-15 6.7L3 16"/></svg>
+                                    <span>Flip</span>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Floating 3D Chips -->
+                    <div class="float-chip chip-1"><span class="chip-icon">⚡</span> Front-end Arch</div>
+                    <div class="float-chip chip-2"><span class="chip-icon">🤖</span> AI + Data</div>
+                    <div class="float-chip chip-3"><span class="chip-icon">📍</span> Tenkasi · CBE</div>
+                    <div class="float-chip chip-4"><span class="chip-icon">🎓</span> KIT CSBS '28</div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Tech Marquee Strip -->
+        <section class="marquee" aria-hidden="true">
+            <div class="marquee-track">
+                <span><i class="marquee-dot"></i>HTML5</span>
+                <span><i class="marquee-dot"></i>CSS3 & 3D</span>
+                <span><i class="marquee-dot"></i>JavaScript ES6+</span>
+                <span><i class="marquee-dot"></i>Bootstrap 5</span>
+                <span><i class="marquee-dot"></i>Python</span>
+                <span><i class="marquee-dot"></i>Java OOP</span>
+                <span><i class="marquee-dot"></i>Responsive UI</span>
+                <span><i class="marquee-dot"></i>Modern AI & Cisco</span>
+                <span><i class="marquee-dot"></i>Git / GitHub</span>
+                <!-- Loop duplicates -->
+                <span><i class="marquee-dot"></i>HTML5</span>
+                <span><i class="marquee-dot"></i>CSS3 & 3D</span>
+                <span><i class="marquee-dot"></i>JavaScript ES6+</span>
+                <span><i class="marquee-dot"></i>Bootstrap 5</span>
+                <span><i class="marquee-dot"></i>Python</span>
+                <span><i class="marquee-dot"></i>Java OOP</span>
+                <span><i class="marquee-dot"></i>Responsive UI</span>
+                <span><i class="marquee-dot"></i>Modern AI & Cisco</span>
+                <span><i class="marquee-dot"></i>Git / GitHub</span>
+            </div>
+        </section>
+
+        <!-- 01 About Section -->
+        <section class="about" id="about">
+            <div class="section-head">
+                <span class="section-tag">01 — About</span>
+                <h2>A builder with a systems mind.</h2>
+            </div>
+            <div class="bento">
+                <article class="panel story" data-tilt>
+                    <h3>Who I am</h3>
+                    <p>
+                        I’m <strong>Durairaja S</strong>, a motivated web developer currently pursuing
+                        B.Tech in Computer Science and Business Systems at
+                        KIT — Kalaignarkarunanidhi Institute of Technology, Coimbatore.
+                    </p>
+                    <p>
+                        I focus on clean structure, sharp typography, and interfaces that stay fast and responsive on any screen.
+                        My goal is full-stack execution that feels designed, tactile, and alive.
+                    </p>
+                </article>
+                <article class="panel stat" data-target="#experience">
+                    <span>02</span>
+                    <strong>Internships</strong>
+                    <p>Industry mentorship in real front-end architecture.</p>
+                </article>
+                <article class="panel stat" data-target="#certificate">
+                    <span>08+</span>
+                    <strong>Certificates</strong>
+                    <p>Cisco, Red Hat, Python, JavaScript, AI & data science.</p>
+                </article>
+                <article class="panel edu">
+                    <h3>Education</h3>
+                    <ul>
+                        <li>
+                            <b>B.Tech CSBS</b>
+                            KIT, Coimbatore · 2025–2028 · 3rd year
+                        </li>
+                        <li>
+                            <b>Diploma in Computer Engineering</b>
+                            M.S.P. Velayutha Nadar Lakshmi Thaiammal Polytechnic College · 2023–2025
+                        </li>
+                        <li>
+                            <b>SSLC</b>
+                            Joy Matric Higher Secondary School, Vadakarai · 2022
+                        </li>
+                    </ul>
+                </article>
+            </div>
+        </section>
+
+        <!-- 02 Experience Section -->
+        <section class="experience" id="experience">
+            <div class="section-head">
+                <span class="section-tag">02 — Experience</span>
+                <h2>Hands-on, not just coursework.</h2>
+            </div>
+            <div class="timeline">
+                <article class="panel job" data-tilt>
+                    <p class="when">May 2026 — June 2026</p>
+                    <h3>Web Development / Intern</h3>
+                    <p class="where">Cognifyz IT Solutions Pvt. Ltd. · Remote</p>
+                    <p>Built responsive front-end components, checked cross-browser behavior, and fixed layout bugs to keep the UI smooth and stable.</p>
+                    <a class="text-link" href="Durairaja%20S_CC.pdf" target="_blank" rel="noopener">
+                        <span>View certificate</span>
+                        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
+                    </a>
+                </article>
+                <article class="panel job" data-tilt>
+                    <p class="when">May 2026 — June 2026</p>
+                    <h3>Web Development / Intern</h3>
+                    <p class="where">Litz Tech · Coimbatore</p>
+                    <p>Trained on web application architecture and applied front-end coding to real client design problems under mentorship.</p>
+                    <a class="text-link" href="Litz tech_intern.pdf" target="_blank" rel="noopener">
+                        <span>View certificate</span>
+                        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
+                    </a>
+                </article>
+            </div>
+        </section>
+
+        <!-- 03 Skills Section -->
+        <section class="skills" id="skills">
+            <div class="section-head">
+                <span class="section-tag">03 — Skills</span>
+                <h2>Tools I actually use.</h2>
+            </div>
+            <div class="skill-grid">
+                <article class="skill-card" data-tilt><span>01 // MARKUP</span><h3>HTML5</h3><p>Semantic structure that stays accessible, search-friendly, and maintainable.</p></article>
+                <article class="skill-card" data-tilt><span>02 // STYLES</span><h3>CSS3 & 3D</h3><p>Layouts, keyframe motion, and 3D depth surfaces optimized for high performance.</p></article>
+                <article class="skill-card" data-tilt><span>03 // SCRIPT</span><h3>JavaScript</h3><p>Interactive DOM, events, asynchronous APIs, and modern ES6+ logic.</p></article>
+                <article class="skill-card" data-tilt><span>04 // SYSTEM</span><h3>Bootstrap 5</h3><p>Rapid, consistent responsive components when a project calls for speed.</p></article>
+                <article class="skill-card" data-tilt><span>05 // DATA</span><h3>Python</h3><p>Scripting and data-adjacent work alongside Cisco data & AI training.</p></article>
+                <article class="skill-card" data-tilt><span>06 // CORE</span><h3>Java</h3><p>OOP problem-solving, structured algorithms, and a rock-solid CS base.</p></article>
+            </div>
+        </section>
+
+        <!-- 04 Selected Work Section -->
+        <section class="projects" id="projects">
+            <div class="section-head">
+                <span class="section-tag">04 — Selected work</span>
+                <h2>Projects in motion.</h2>
+            </div>
+            <div class="project-grid">
+                <article class="project featured" data-tilt>
+                    <p class="tag">Live Production</p>
+                    <h3>This portfolio</h3>
+                    <p>A custom 3D, mobile-first personal portfolio featuring holographic glass badges, dynamic theme color shifting, interactive particle constellations, and an editorial dark system.</p>
+                    <ul>
+                        <li>HTML5</li>
+                        <li>CSS3 3D Engine</li>
+                        <li>JavaScript ES6</li>
+                        <li>Web Audio API</li>
+                    </ul>
+                </article>
+                <article class="project" data-tilt>
+                    <p class="tag">COMING SOON</p>
+                    <h3> My First Project</h3>
+                    <p>Something exciting is on the way.</p>
+                </article>
+                <article class="project" data-tilt>
+                    <p class="tag">COMING SOON</p>
+                    <h3>New Work</h3>
+                    <p>Currently learning. More coming soon.</p>
+                </article>
+            </div>
+        </section>
+
+        <!-- 05 Certificates Section -->
+        <section class="certificate" id="certificate">
+            <div class="section-head">
+                <span class="section-tag">05 — Proof</span>
+                <h2>Certificates you can open.</h2>
+            </div>
+            <div class="cert-grid">
+                <a class="cert" data-tilt href="JavaScript_Essentials_1_certificate_durairajass45-gmail-com_c96da6f9-bd5b-4afa-a1e1-7c169f44bb6a.pdf" target="_blank" rel="noopener">
+                    <span>Cisco Academy</span>
+                    <h3>JavaScript Essentials 1</h3>
+                    <p>June 2026</p>
+                    <em>Open PDF ↗</em>
+                </a>
+                <a class="cert" data-tilt href="Introduction_to_Modern_AI_certificate_durairajass45-gmail-com_a58dc165-3eea-48b4-84e5-56d0f2098b94%20(1).pdf" target="_blank" rel="noopener">
+                    <span>Cisco Academy</span>
+                    <h3>Introduction to Modern AI</h3>
+                    <p>June 2026</p>
+                    <em>Open PDF ↗</em>
+                </a>
+                <a class="cert" data-tilt href="Apply_AI-_Analyze_Customer_Reviews_certificate_durairajass45-gmail-com_eb5ed821-af73-4337-a016-5af9104826f5.pdf" target="_blank" rel="noopener">
+                    <span>Cisco Academy</span>
+                    <h3>Apply AI: Analyze Customer Reviews</h3>
+                    <p>June 2026</p>
+                    <em>Open PDF ↗</em>
+                </a>
+                <a class="cert" data-tilt href="Introduction_to_Data_Science_certificate_durairajass45-gmail-com_c62aeead-05c2-4628-9f09-20f2bbda4624.pdf" target="_blank" rel="noopener">
+                    <span>Cisco Academy</span>
+                    <h3>Introduction to Data Science</h3>
+                    <p>June 2026</p>
+                    <em>Open PDF ↗</em>
+                </a>
+                <a class="cert" data-tilt href="Data_Analytics_Essentials_certificate_durairajass45-gmail-com_1c0a98e7-6458-4ba9-87ec-e9efdbd7194c.pdf" target="_blank" rel="noopener">
+                    <span>Cisco Academy</span>
+                    <h3>Data Analytics Essentials</h3>
+                    <p>June 2026</p>
+                    <em>Open PDF ↗</em>
+                </a>
+                <a class="cert" data-tilt href="Networking_Basics_certificate_durairajass45-gmail-com_eab4ff9d-fff1-47dc-8c5c-ceb02c63b33e.pdf" target="_blank" rel="noopener">
+                    <span>Cisco Academy</span>
+                    <h3>Networking Basics</h3>
+                    <p>June 2026</p>
+                    <em>Open PDF ↗</em>
+                </a>
+                <a class="cert" data-tilt href="Red Hat_Certification.pdf" target="_blank" rel="noopener">
+                    <span>Red Hat</span>
+                    <h3>Red Hat Certified System Administrator</h3>
+                    <p>May 2024</p>
+                    <em>Open PDF ↗</em>
+                </a>
+                <a class="cert" data-tilt href="Durairaja%20S_CC.pdf" target="_blank" rel="noopener">
+                    <span>Cognifyz IT</span>
+                    <h3>Web Development Internship</h3>
+                    <p>June 2026</p>
+                    <em>Open PDF ↗</em>
+                </a>
+                <a class="cert" data-tilt href="Litz tech_intern.pdf" target="_blank" rel="noopener">
+                    <span>Litz Tech</span>
+                    <h3>Web Development Internship</h3>
+                    <p>May 2026</p>
+                    <em>Open PDF ↗</em>
+                </a>
+                
+                <div class="cert muted" data-tilt>
+                    <span>Academy Certified</span>
+                    <h3>Python Essentials 1 & 2</h3>
+                    <p>Cisco 2025</p>
+                    <em>Verified Credentials</em>
+                </div>
+            </div>
+        </section>
+
+        <!-- 06 Contact Section -->
+        <section class="contact" id="contact">
+            <div class="section-head">
+                <span class="section-tag">06 — Contact</span>
+                <h2>Let’s make something sharp.</h2>
+            </div>
+            <div class="contact-grid">
+                <div class="panel contact-card">
+                    <h3>Direct line</h3>
+                    <a href="mailto:durairajass45@gmail.com">durairajass45@gmail.com</a>
+                    <a href="tel:+919788467994">+91 97884 67994</a>
+                    <p>Tenkasi, Tamil Nadu, India</p>
+                    <div class="socials">
+                        <a href="https://linkedin.com/in/durairaja-s" target="_blank" rel="noopener">LinkedIn ↗</a>
+                        <a href="https://github.com/durairaja-s" target="_blank" rel="noopener">GitHub ↗</a>
+                    </div>
+                    <p class="fine">Tamil · Native | English · Professional Working Proficiency</p>
+                </div>
+                <form id="contact-form" class="panel form">
+                    <label>Name
+                        <input type="text" name="from_name" autocomplete="name" placeholder="Your name" required>
+                    </label>
+                    <label>Email
+                        <input type="email" name="from_email" autocomplete="email" placeholder="you@email.com" required>
+                    </label>
+                    <label>Message
+                        <textarea name="user_message" rows="5" placeholder="What should we build together?" required></textarea>
+                    </label>
+                    <button type="submit" class="btn btn-primary">
+                        <span>Send message</span>
+                        <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.3" stroke-linecap="round" stroke-linejoin="round"><line x1="22" y1="2" x2="11" y2="13"/><polygon points="22 2 15 22 11 13 2 9 22 2"/></svg>
+                    </button>
+                    <p class="form-note">Your name, email, and message go straight to durairajass45@gmail.com so I can reply directly.</p>
+                    <p class="form-status" role="status" aria-live="polite"></p>
+                </form>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer>
+        <p>© 2026 Durairaja S · Crafted with motion & code</p>
+        <a href="#home">Back to top ↑</a>
+    </footer>
+
+    <!-- EmailJS SDK & Scripts -->
+    <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
+    <script src="script.js"></script>
+</body>
+
+</html>
